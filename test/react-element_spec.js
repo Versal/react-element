@@ -1,28 +1,28 @@
-var TestReactComponent = require('./fixture-react-component.js');
-var registerReactElement = require('../index.js');
+var HelloWorld = React.createClass({
+  render: function(){
+    return React.DOM.p(null, this.props.message);
+  }
+});
 
 describe('react-element', function(){
-  var subject = null;
+  var testElement = null;
 
   before(function(){
-    registerReactElement('test-element', TestReactComponent);
+    document.registerReactElement('test-element', HelloWorld);
   });
 
-  describe('rendering', function(){
-    beforeEach(function(){
-      subject = document.createElement('test-component');
-      subject.setAttribute('data-message', 'hello world');
-      document.body.appendChild(subject);
-    });
+  beforeEach(function(done){
+    testElement = document.createElement('test-element');
+    testElement.setAttribute('data-message', 'hello world');
+    document.body.appendChild(testElement);
+    setTimeout(done, 1);
+  });
 
-    afterEach(function(){
-      document.body.removeChild(subject);
-    });
+  afterEach(function(){
+    document.body.removeChild(testElement);
+  });
 
-    it('renders fixture component', function(){
-      setTimeout(function(){
-        expect(subject.textContent).to.equal('hello world');
-      }, 1);
-    });
-  })
+  it('renders fixture component', function(){
+    expect(testElement.textContent).to.equal('hello world');
+  });
 });
