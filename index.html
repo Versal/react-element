@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="bower_components/react/react.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+  var ReactComponentClass = React.createClass({
+    render: function(){
+      return React.DOM.p(null, this.props.message);
+    }
+  });
+
+  document.registerReactElement('test-react', ReactComponentClass);
+  </script>
+</head>
+<body>
+<test-react data-message="Hello, world"></test-react>
+</body>
+</html>
