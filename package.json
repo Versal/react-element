@@ -1,0 +1,23 @@
+{
+  "name": "react-element",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "karma": "^0.12.28",
+    "karma-browserify": "^1.0.0",
+    "karma-mocha": "^0.1.9",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-chai": "^0.1.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "ISC"
+}

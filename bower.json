@@ -1,0 +1,20 @@
+{
+  "name": "react-element",
+  "main": "index.js",
+  "version": "0.0.1",
+  "authors": [
+    "Andrey Mereskin <mereskin@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.12.1",
+    "webcomponentsjs": "~0.5.1"
+  }
+}
