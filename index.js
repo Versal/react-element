@@ -8,7 +8,11 @@
 
     prototype.attachedCallback = function(){
       this._render();
-    }
+    };
+
+    prototype.detachedCallbkack = function(){
+      React.unmountComponentAtNode(this);
+    };
 
     prototype.attributeChangedCallback = function(name, old, current) {
       if(name.match(/^data\-/)) {
