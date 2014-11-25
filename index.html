@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="bower_components/react/react.min.js"></script>
+  <script src="index.js"></script>
+  <script src="test/fixture-react-component.js"></script>
+  <script>
+  document.registerReactElement('test-element', TestComponent);
+  </script>
+</head>
+<body>
+<test-element data-message="hello, world"></test-element>
+</body>
+</html>
