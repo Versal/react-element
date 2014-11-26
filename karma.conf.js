@@ -7,25 +7,16 @@ module.exports = function(config) {
     // base path, that will be used to resolve files and exclude
     basePath: '',
 
-
     // frameworks to use
-    frameworks: ['browserify', 'mocha', 'chai'],
+    frameworks: ['mocha', 'chai'],
 
     // list of files / patterns to load in the browser
     files: [
+      'index.js',
       'bower_components/react/react.min.js',
       'bower_components/webcomponentsjs/webcomponents-lite.min.js',
       'test/*_spec.js'
     ],
-
-    preprocessors: {
-      'test/*.js': [ 'browserify' ],
-      'index.js': [ 'browserify' ]
-    },
-
-    browserify: {
-      debug: true
-    },
 
     // list of files to exclude
     exclude: [
