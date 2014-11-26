@@ -12,9 +12,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'index.js',
-      'bower_components/react/react.min.js',
-      'bower_components/webcomponentsjs/webcomponents-lite.min.js',
+      'react-element.js',
+      '../react/react.min.js',
+      '../webcomponentsjs/webcomponents-lite.min.js',
       'test/*_spec.js'
     ],
 
