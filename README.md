@@ -10,7 +10,7 @@ bower install react-element --save
 ```
 Include it on your page and call `document.registerReactElement`:
 ```
-<script src="bower_components/react-element/react-element.min.js"></script>
+<script src="bower_components/react-element/react-element.js"></script>
 <script>
 var ReactComponentClass = React.createClass({
   render: function(){
