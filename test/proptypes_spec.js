@@ -25,6 +25,7 @@ describe('react-element', function(){
     testElement.setAttribute('data-string', 'string');
     testElement.setAttribute('data-object', '{ "key": "value" }');
     testElement.setAttribute('data-array', '[0,1,2]');
+    testElement.setAttribute('data-foo', 'bar');
 
     document.body.appendChild(testElement);
     setTimeout(done, 1);
@@ -44,6 +45,10 @@ describe('react-element', function(){
 
   it('string', function(){
     expect(testElement.props.string).to.equal('string');
+  });
+
+  it('unspecified', function(){
+    expect(testElement.props.foo).to.equal('bar');
   });
 
   it('boolean', function(){
