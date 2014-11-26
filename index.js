@@ -46,6 +46,7 @@
 
           // No need to parse strings
           case React.PropTypes.string:
+          case React.PropTypes.string.isRequired:
             props[key] = stringifiedValue;
             break;
 

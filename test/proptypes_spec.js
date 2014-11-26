@@ -4,7 +4,9 @@ var TypedElement = React.createClass({
     boolean: React.PropTypes.bool,
     string: React.PropTypes.string,
     object: React.PropTypes.object,
-    array: React.PropTypes.array
+    array: React.PropTypes.array,
+
+    requiredString: React.PropTypes.string.isRequired
   },
 
   render: function(){ return null; }
@@ -26,6 +28,7 @@ describe('react-element', function(){
     testElement.setAttribute('data-object', '{ "key": "value" }');
     testElement.setAttribute('data-array', '[0,1,2]');
     testElement.setAttribute('data-foo', 'bar');
+    testElement.setAttribute('data-required-string', 'foo')
 
     document.body.appendChild(testElement);
     setTimeout(done, 1);
@@ -47,16 +50,20 @@ describe('react-element', function(){
     expect(testElement.props.string).to.equal('string');
   });
 
-  it('unspecified', function(){
-    expect(testElement.props.foo).to.equal('bar');
-  });
-
   it('boolean', function(){
     expect(testElement.props.object.key).to.equal('value');
   });
 
   it('array', function(){
     expect(testElement.props.array).to.deep.equal([0,1,2]);
+  });
+
+  it('unspecified', function(){
+    expect(testElement.props.foo).to.equal('bar');
+  });
+
+  it('required string', function(){
+    expect(testElement.props.requiredString).to.equal('foo');
   });
 
 });
