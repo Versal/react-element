@@ -47,10 +47,14 @@
 
           default:
             // Assert, that JSON.parse does the job.
-            props[key] = JSON.parse(stringifiedValue);
+            try{
+              props[key] = JSON.parse(stringifiedValue);
+            } catch(err) {
+              console.warn('Error parsing prop type', key, propType, stringifiedValue);
+            }
         }
       } else {
-        props[key] = rawValue;
+        props[key] = stringifiedValue;
       }
     }.bind(this));
     return props;
